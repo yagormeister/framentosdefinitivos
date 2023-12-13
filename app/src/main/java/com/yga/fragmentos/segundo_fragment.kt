@@ -25,7 +25,11 @@ class segundo_fragment : Fragment(){
         val btnVolver = view.findViewById<Button>(R.id.btnVolver)
         val primerFragment = primer_fragment()
 
-        btnVolver.setOnClickListener {       }
+        btnVolver.setOnClickListener {
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.fragmentContainer, primerFragment)
+                    .commit()    }
+        }
 
 
         val data = arguments
